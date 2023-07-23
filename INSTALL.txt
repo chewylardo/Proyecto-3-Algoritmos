@@ -1,0 +1,4 @@
+﻿Para poder instalar el programa y hacer que funcione, debemos primero cerciorarnos de tener visual studio 2019 con el compilador de c + + adecuado.
+Luego de esto colocaremos o descargamos el repositorio de github donde nuestro visual studio guarda sus proyectos.
+Una vez dentro del programa lo compilamos y lo utilizamos.
+
