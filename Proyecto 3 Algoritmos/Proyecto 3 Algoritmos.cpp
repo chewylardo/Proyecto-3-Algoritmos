@@ -35,7 +35,7 @@ auto selectionSort(int arr[], int size)
 
 }
 
-//selection Sorte descente 
+//selection Sorte descendente 
 auto selectionSortRevez(int arr[], int size)
 {   
     auto start = high_resolution_clock::now();
@@ -61,7 +61,7 @@ auto selectionSortRevez(int arr[], int size)
 }
 
 
-//bubble sort ascendete
+//bubble sort ascendente
 auto bubbleSort(int arr[], int size)
 {
     auto start = high_resolution_clock::now();
@@ -87,7 +87,7 @@ auto bubbleSort(int arr[], int size)
 }
 
 
-//bubble sort descendete
+//bubble sort descendente
 auto bubbleSortRevez(int arr[], int size)
 {
     auto start = high_resolution_clock::now();
@@ -137,7 +137,7 @@ auto insertion_sort(int arr[], int size)
     return duration_cast<duration<double>>(end - start);
 }
 
-//insertion Sorte descente 
+//insertion Sorte descendente 
 auto insertion_sortRevez(int arr[], int size)
 {   
     auto start = high_resolution_clock::now();
@@ -201,6 +201,7 @@ auto shellSortRevez(int arr[], int size) {
 }
 
 //QuickSort ascendente
+//particiones y ordenamiento parcial de quick sort
 int partition(int arr[], int low, int high)
 {
     
@@ -222,7 +223,7 @@ int partition(int arr[], int low, int high)
     return (i + 1);
 }
 
-
+//main quick sort
 void quickSort(int arr[], int low, int size)
 {
     if (low < size) {
@@ -237,6 +238,7 @@ void quickSort(int arr[], int low, int size)
 
 }
 
+//tiempo transcurrido de quick sort
 auto quickSortTimer(int arr[], int size)
 {
     auto start = high_resolution_clock::now();
@@ -249,6 +251,7 @@ auto quickSortTimer(int arr[], int size)
 }
 
 //QuickSort descendiente
+//particiones del quick sort descendente y ordenamiento
 int partitionRevez(int arr[], int low, int high)
 {
 
@@ -270,7 +273,7 @@ int partitionRevez(int arr[], int low, int high)
     return (i + 1);
 }
 
-
+//main quick sort al revez
 void quickSortRevez(int arr[], int low, int size)
 {
     if (low < size) {
@@ -286,6 +289,9 @@ void quickSortRevez(int arr[], int low, int size)
   
   
 }
+
+
+//tiempo del quick sort descendente
 auto  quickSortTimerRevez(int arr[], int size)
 {
     auto start = high_resolution_clock::now();
@@ -305,6 +311,7 @@ auto  quickSortTimerRevez(int arr[], int size)
 //menuPrincipal del player
 void menuprincipal() {
 
+    //creacion de arreglos aleatorio
     srand((unsigned)time(NULL));
     int size = 10;
     int arr[10];
@@ -321,10 +328,11 @@ void menuprincipal() {
 
     }
         
+
     for (int i = 0; i < size; i++)
         cout << arr[i] << ' ';
     cout << endl;
-    
+    //elegir ascendente o descendente
     int selector;
     cout << "Carreras de algoritmos\n";
     cout << "1. Ascedente.\n2. Descendente.\n\n";
@@ -332,7 +340,7 @@ void menuprincipal() {
     cin >> selector;
 
 
-
+    //llamar a las funciones de orden y sus tiempos
     if (selector == 1) {
         auto time_takenSelection = selectionSort(arr, size);
         cout << "Execution time selection Sort: " << time_takenSelection.count() << " seconds" << endl;
@@ -363,6 +371,8 @@ void menuprincipal() {
         cout << "eliga una opcion abilitada\n\n";
         menuprincipal();
     }
+
+    //testear denuevo o salir
     cout << "\n\n\n";
     cout << "Probar denuevo\n";
     cout << "1. Si\n2. No\n\n";
